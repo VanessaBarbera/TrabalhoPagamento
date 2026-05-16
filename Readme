@@ -1,0 +1,49 @@
+# Trabalho de Conclusão da Disciplina - Javascript
+
+Projeto desenvolvido para a disciplina de Javascript da pós-graduação.
+
+## Objetivo
+
+Criar uma classe chamada ServicoDePagamento com os seguintes métodos:
+
+- pagar() → realiza um pagamento
+- consultarUltimoPagamento() → retorna o último pagamento realizado
+
+Os pagamentos são armazenados em uma lista e possuem as propriedades:
+
+- codigoBarras
+- empresa
+- valor
+- categoria
+
+A categoria é definida automaticamente:
+
+- Valor maior que 100 → "cara"
+- Valor menor ou igual a 100 → "padrão"
+
+---
+
+# Tecnologias Utilizadas
+
+- Javascript
+- Node.js
+- Mocha
+- Node Assert
+- Git/GitHub
+
+---
+
+# Estrutura do Projeto
+
+```text
+trabalho-javascript-pos
+│
+├── src
+│   └── ServicoDePagamento.js
+│
+├── test
+│   └── ServicoDePagamento.test.js
+│
+├── package.json
+│
+└── README.md
