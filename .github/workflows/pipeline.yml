@@ -1,9 +1,15 @@
-name: CI
+
+name: CI - Testes Automatizados
 
 on:
   push:
     branches:
       - main
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 12 * * *'
 
 jobs:
   teste:
@@ -19,7 +25,14 @@ jobs:
           node-version: 20
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
 
-      - name: Executar testes
-        run: npx mocha
+      - name: Executar testes com relatório
+        run: npx mocha --reporter json > relatorio-testes.json
+
+      - name: Upload do relatório
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-testes
+          path: relatorio-testes.json
+
