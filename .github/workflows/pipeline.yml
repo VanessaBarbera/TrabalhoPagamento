@@ -26,9 +26,12 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
+      - name: Corrigir permissão do Mocha
+        run: chmod +x ./node_modules/.bin/mocha
+
       - name: Executar testes e gerar relatório
         run: |
-          npm test
+          node ./node_modules/mocha/bin/mocha.js
           echo "Testes executados com sucesso" > relatorio-testes.txt
 
       - name: Upload do relatório
