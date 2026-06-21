@@ -27,10 +27,12 @@ jobs:
         run: npm install
 
       - name: Executar testes e gerar relatório
-        run: npx mocha --reporter json > relatorio-testes.json
+        run: |
+          npm test
+          echo "Testes executados com sucesso" > relatorio-testes.txt
 
       - name: Upload do relatório
         uses: actions/upload-artifact@v4
         with:
           name: relatorio-testes
-          path: relatorio-testes.json
+          path: relatorio-testes.txt
