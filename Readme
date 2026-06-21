@@ -1,49 +1,69 @@
-# Trabalho de Conclusão da Disciplina - Javascript
-
-Projeto desenvolvido para a disciplina de Javascript da pós-graduação.
-
-## Objetivo
-
-Criar uma classe chamada ServicoDePagamento com os seguintes métodos:
-
-- pagar() → realiza um pagamento
-- consultarUltimoPagamento() → retorna o último pagamento realizado
-
-Os pagamentos são armazenados em uma lista e possuem as propriedades:
-
-- codigoBarras
-- empresa
-- valor
-- categoria
-
-A categoria é definida automaticamente:
-
-- Valor maior que 100 → "cara"
-- Valor menor ou igual a 100 → "padrão"
+```
+```
 
 ---
 
-# Tecnologias Utilizadas
+# Execução dos Testes
 
-- Javascript
-- Node.js
-- Mocha
-- Node Assert
-- Git/GitHub
+Para instalar as dependências:
+
+```bash
+npm install
+```
+
+Para executar os testes:
+
+```bash
+npm test
+```
 
 ---
 
-# Estrutura do Projeto
+# Pipeline CI/CD com GitHub Actions
 
-```text
-trabalho-javascript-pos
-│
-├── src
-│   └── ServicoDePagamento.js
-│
-├── test
-│   └── ServicoDePagamento.test.js
-│
-├── package.json
-│
+O projeto possui uma pipeline configurada utilizando GitHub Actions.
+
+## Formas de Disparo
+
+### Execução Automática
+
+A pipeline é executada automaticamente a cada envio de código para a branch principal.
+
+### Execução Manual
+
+A pipeline pode ser executada manualmente através da aba **Actions** do GitHub.
+
+### Execução Agendada
+
+A pipeline pode ser configurada para execução em horários pré-definidos utilizando cron.
+
+---
+
+# Etapas da Pipeline
+
+1. Checkout do código fonte
+2. Instalação do Node.js
+3. Instalação das dependências do projeto
+4. Execução dos testes automatizados
+5. Geração e armazenamento dos resultados da execução
+
+---
+
+# Relatório de Testes
+
+Os testes automatizados são executados utilizando o framework Mocha.
+
+Os resultados da execução são disponibilizados na própria execução da pipeline através da aba **Actions** do GitHub.
+
+---
+
+# Autor
+
+Vanessa Barbera
+
+Trabalho desenvolvido para conclusão da disciplina de Javascript da Pós-Graduação.
+
+```
+```
+
 └── README.md
